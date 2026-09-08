@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Velora</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+
+    <aside class="sidebar" id="sidebar">
+
+        
+        <div class="logo">
+            <div class="logo-icon">V</div>
+            <span>Velora</span>
+        </div>
+
+        
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item active">
+                <span>⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#projects" class="nav-item">
+                <span>▣</span>
+                <span>Projects</span>
+            </a>
+
+            <a href="#tasks" class="nav-item">
+                <span>✓</span>
+                <span>My Tasks</span>
+            </a>
+
+            <a href="#team" class="nav-item">
+                <span>♧</span>
+                <span>Team</span>
+            </a>
+
+        </nav>
+
+
+        
+        <div class="sidebar-bottom">
+
+            <button id="logoutBtn" class="logout-btn">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <div class="page-title">
+                <h1>Dashboard</h1>
+                <p>Plan together. Work smarter. ✨</p>
+            </div>
+
+            <div class="topbar-right">
+
+                
+                <div class="notification-wrapper">
+
+    <button class="notification-btn" id="notificationBtn">
+        🔔
+        <span class="notification-dot" id="notificationDot"></span>
+    </button>
+
+    <div class="notification-panel" id="notificationPanel">
+
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="markAllReadBtn">
+                Mark all read
+            </button>
+        </div>
+
+        <div id="notificationList" class="notification-list">
+            <div class="no-notifications">
+                No notifications yet ✨
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+                
+                <div class="user-profile">
+
+                    <div class="user-avatar" id="userAvatar">
+                        V
+                    </div>
+
+                    <div class="user-info">
+                        <strong id="userName">
+                            Loading...
+                        </strong>
+
+                        <span id="userEmail">
+                            Loading...
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="dashboard-container">
+
+
+            <section class="welcome-card">
+
+                <div>
+
+                    <span class="welcome-small">
+                        Welcome back 👋
+                    </span>
+
+                    <h2 id="welcomeName">
+                        Let's get things done.
+                    </h2>
+
+                    <p>
+                        Manage your projects, tasks and team
+                        all in one place.
+                    </p>
+
+                </div>
+
+                <div class="welcome-decoration">
+                    ✨
+                </div>
+
+            </section>
+
+
+            <section class="stats-grid">
+
+                
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📁
+                    </div>
+
+                    <div>
+                        <span>Projects</span>
+                        <strong id="projectCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Total Tasks</span>
+                        <strong id="taskCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div>
+                        <span>Completed</span>
+                        <strong id="completedCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>Team Members</span>
+                        <strong id="memberCount">1</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="section" id="projects">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>My Projects</h2>
+                        <p>Keep your work organized.</p>
+                    </div>
+
+                    <button id="addProjectBtn" class="primary-btn">
+                        + New Project
+                    </button>
+
+                </div>
+
+
+                
+
+                <div id="projectsContainer" class="projects-grid">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            📁
+                        </div>
+
+                        <h3>No projects yet</h3>
+
+                        <p>
+                            Create your first project to get started.
+                        </p>
+
+                        <button
+                            class="primary-btn"
+                            id="emptyProjectBtn"
+                        >
+                            Create Project
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="section" id="tasks">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Recent Tasks</h2>
+                        <p>Stay on top of your work.</p>
+                    </div>
+
+                    <button id="addTaskBtn" class="secondary-btn">
+                        + Add Task
+                    </button>
+
+                </div>
+
+
+                
+
+                <div class="task-board">
+
+
+                    
+
+                    <div class="task-column">
+
+                        <div class="column-header">
+
+                            <h3>
+                                To Do
+                            </h3>
+
+                            <span id="todoCount">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div
+                            id="todoTasks"
+                            class="task-list"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    
+
+                    <div class="task-column">
+
+                        <div class="column-header">
+
+                            <h3>
+                                In Progress
+                            </h3>
+
+                            <span id="progressCount">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div
+                            id="progressTasks"
+                            class="task-list"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    
+
+                    <div class="task-column">
+
+                        <div class="column-header">
+
+                            <h3>
+                                Completed
+                            </h3>
+
+                            <span id="doneCount">
+                                0
+                            </span>
+
+                        </div>
+
+                        <div
+                            id="doneTasks"
+                            class="task-list"
+                        >
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="section" id="team">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Team</h2>
+                        <p>People working on your projects.</p>
+                    </div>
+
+                    <button class="secondary-btn" id="inviteBtn">
+                        + Invite Member
+                    </button>
+
+                </div>
+
+                <div class="team-card">
+
+                    <div class="team-avatar" id="teamAvatar">
+                        V
+                    </div>
+
+                    <div class="team-info">
+
+                        <strong id="teamName">
+                            Loading...
+                        </strong>
+
+                        <span id="teamEmail">
+                            Loading...
+                        </span>
+
+                    </div>
+
+                    <span class="team-role">
+                        Admin
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <div
+        id="projectModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                id="closeProjectModal"
+            >
+                ×
+            </button>
+
+            <h2>Create New Project</h2>
+
+            <p>
+                Start a new project for your team.
+            </p>
+
+            <form id="projectForm">
+
+                <label>
+                    Project Name
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="e.g. Website Redesign"
+                    required
+                >
+
+
+                <label>
+                    Description
+                </label>
+
+                <textarea
+                    id="projectDescription"
+                    placeholder="What is this project about?"
+                    maxlength="300"
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn"
+                >
+                    Create Project
+                </button>
+
+                <p
+                    id="projectMessage"
+                    class="form-message"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <div
+        id="taskModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                id="closeTaskModal"
+            >
+                ×
+            </button>
+
+            <h2>Add New Task</h2>
+
+            <p>
+                Add a task to your workspace.
+            </p>
+
+            <form id="taskForm">
+
+                <label>
+                    Task Name
+                </label>
+
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="e.g. Design homepage"
+                    required
+                >
+
+
+                <label>
+                    Project
+                </label>
+
+                <select id="taskProject">
+                    <option value="">
+                        General Task
+                    </option>
+                </select>
+
+
+                <label>
+                    Status
+                </label>
+
+                <select id="taskStatus">
+
+                    <option value="todo">
+                        To Do
+                    </option>
+
+                    <option value="progress">
+                        In Progress
+                    </option>
+
+                    <option value="done">
+                        Completed
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn"
+                >
+                    Add Task
+                </button>
+
+                <p
+                    id="taskMessage"
+                    class="form-message"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+<div class="modal" id="inviteModal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            id="closeInviteModal"
+        >
+            ×
+        </button>
+
+        <h2>Invite Team Member</h2>
+
+        <p>
+            Invite someone to join your Velora team.
+        </p>
+
+        <form id="inviteForm">
+
+            <label for="inviteEmail">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="inviteEmail"
+                placeholder="Enter member's email"
+                required
+            >
+
+            <div
+                id="inviteMessage"
+                class="form-message"
+            ></div>
+
+            <button
+                type="submit"
+                class="primary-btn"
+            >
+                Send Invitation
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+    <script
+        type="module"
+        src="../js/dashboard.js"
+    ></script>
+
+</body>
+
+</html>

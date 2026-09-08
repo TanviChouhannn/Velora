@@ -1,0 +1,401 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+
+
+.background {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 255, 255, 0.8),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #FFE4E1 0%,
+            #F6B6C8 25%,
+            #E889A8 50%,
+            #D95B88 75%,
+            #AD1457 100%
+        );
+}
+
+
+
+.login-card {
+
+    width: 100%;
+    max-width: 430px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 42px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(130, 20, 70, 0.25);
+
+    text-align: center;
+}
+
+
+
+.logo {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.logo-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 14px;
+
+    background: #AD1457;
+
+    color: white;
+
+    font-size: 26px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(173, 20, 87, 0.3);
+}
+
+
+.logo h1 {
+
+    color: #8E1048;
+
+    font-size: 32px;
+
+    letter-spacing: -1px;
+}
+
+
+.welcome {
+
+    color: #8E1048;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+.input-group {
+
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    color: #6d1740;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 2px solid #F3D0DC;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    color: #4a1730;
+
+    background: #FFF8FA;
+
+    transition: 0.25s;
+}
+
+
+.input-group input:focus {
+
+    border-color: #AD1457;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(173, 20, 87, 0.08);
+}
+
+
+.input-group input::placeholder {
+
+    color: #b99aa8;
+}
+
+
+.password-wrapper {
+
+    position: relative;
+}
+
+
+.password-wrapper input {
+
+    padding-right: 50px;
+}
+
+
+.toggle-password {
+
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    opacity: 0.7;
+}
+
+
+.toggle-password:hover {
+
+    opacity: 1;
+}
+
+
+
+.forgot-row {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: -5px;
+
+    margin-bottom: 22px;
+}
+
+
+.forgot-row button {
+
+    border: none;
+
+    background: none;
+
+    color: #AD1457;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+.forgot-row button:hover {
+
+    text-decoration: underline;
+}
+
+
+.login-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #AD1457;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 8px 20px rgba(173, 20, 87, 0.25);
+}
+
+
+.login-btn:hover {
+
+    background: #8E1048;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(173, 20, 87, 0.3);
+}
+
+
+.login-btn:active {
+
+    transform: translateY(0);
+}
+
+
+
+#loginMessage {
+
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.success {
+
+    color: #2e7d32;
+}
+
+
+.error {
+
+    color: #c62828;
+}
+
+
+.signup-text {
+
+    margin-top: 28px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.signup-text a {
+
+    color: #AD1457;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.signup-text a:hover {
+
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 500px) {
+
+    .background {
+
+        padding: 15px;
+    }
+
+
+    .login-card {
+
+        padding: 30px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .logo h1 {
+
+        font-size: 28px;
+    }
+
+
+    .welcome {
+
+        font-size: 24px;
+    }
+
+}

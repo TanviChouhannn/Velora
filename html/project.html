@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Board | Velora</title>
+
+    
+    <link rel="stylesheet" href="../css/project.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+
+        
+        <div class="logo">
+            <div class="logo-icon">V</div>
+            <span>Velora</span>
+        </div>
+
+
+        
+        <div class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="project.html" class="active">
+                Projects
+            </a>
+
+        </div>
+
+
+        
+        <div class="nav-right">
+
+            <span id="userName">
+                User
+            </span>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="project-container">
+
+
+        <section class="project-header">
+
+            <div>
+
+                <a href="dashboard.html" class="back-btn">
+                    ← Back to Dashboard
+                </a>
+
+                <h1 id="projectTitle">
+                    My Project
+                </h1>
+
+                <p id="projectDescription">
+                    Manage your project and tasks together.
+                </p>
+
+            </div>
+
+
+            
+
+            <button id="addTaskBtn" class="primary-btn">
+                + Add Task
+            </button>
+
+        </section>
+
+
+        <section class="board">
+
+
+            <div class="board-column">
+
+                <div class="column-header">
+
+                    <div class="column-title">
+
+                        <span class="status-dot todo-dot"></span>
+
+                        <h2>To Do</h2>
+
+                    </div>
+
+                    <span id="todoCount" class="task-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div id="todoTasks" class="task-list">
+
+                    
+
+                    <div class="empty-state">
+                        No tasks yet
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="board-column">
+
+                <div class="column-header">
+
+                    <div class="column-title">
+
+                        <span class="status-dot progress-dot"></span>
+
+                        <h2>In Progress</h2>
+
+                    </div>
+
+                    <span id="progressCount" class="task-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div id="progressTasks" class="task-list">
+
+                    
+
+                    <div class="empty-state">
+                        No tasks yet
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="board-column">
+
+                <div class="column-header">
+
+                    <div class="column-title">
+
+                        <span class="status-dot done-dot"></span>
+
+                        <h2>Done</h2>
+
+                    </div>
+
+                    <span id="doneCount" class="task-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div id="doneTasks" class="task-list">
+
+                    
+
+                    <div class="empty-state">
+                        No completed tasks
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="taskModal" class="modal">
+
+        <div class="modal-content">
+
+            
+
+            <button id="closeModalBtn" class="close-btn">
+                ×
+            </button>
+
+
+            <h2>
+                Create New Task
+            </h2>
+
+            <p>
+                Add a task to your project.
+            </p>
+
+
+            
+
+            <form id="taskForm">
+
+
+                
+
+                <label for="taskTitle">
+                    Task Title
+                </label>
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter task title"
+                    maxlength="100"
+                    required
+                >
+
+
+                
+
+                <label for="taskDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="taskDescription"
+                    placeholder="Describe the task..."
+                    maxlength="300"
+                ></textarea>
+
+
+                
+
+                <label for="taskAssignee">
+                    Assign To
+                </label>
+
+                <input
+                    type="text"
+                    id="taskAssignee"
+                    placeholder="@username"
+                >
+
+
+                
+
+                <label for="taskDueDate">
+                    Due Date
+                </label>
+
+                <input
+                    type="date"
+                    id="taskDueDate"
+                >
+
+
+                
+
+                <label for="taskStatus">
+                    Status
+                </label>
+
+                <select id="taskStatus">
+
+                    <option value="todo">
+                        To Do
+                    </option>
+
+                    <option value="progress">
+                        In Progress
+                    </option>
+
+                    <option value="done">
+                        Done
+                    </option>
+
+                </select>
+
+
+                
+
+                <p id="taskMessage"></p>
+
+
+                
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn"
+                >
+                    Create Task
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script
+        type="module"
+        src="../js/project.js">
+    </script>
+
+</body>
+
+</html>
