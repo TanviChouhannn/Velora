@@ -7,6 +7,7 @@ import {
     collection,
     addDoc,
     getDocs,
+    getDoc,
     query,
     where,
     serverTimestamp,
@@ -757,29 +758,58 @@ if (inviteForm) {
                     currentUser.displayName ||
                     currentUser.email?.split("@")[0] ||
                     "Velora Team";
-                const invitationRef =
-                    await addDoc(
-                        collection(
-                            db,
-                            "invitations"
-                        ),
-                        {
-                            invitedEmail:
-                                email,
-                            invitedBy:
-                                currentUser.uid,
-                            inviterEmail:
-                                currentUser.email,
-                            inviterName:
-                                inviterName,
-                            status:
-                                "pending",
-                            createdAt:
-                                serverTimestamp()
-                        }
-                    );
-                const inviteLink =
-                    `${window.location.origin}/signup.html?invite=${invitationRef.id}`;
+                const userDoc =
+    await getDoc(
+        doc(
+            db,
+            "users",
+            currentUser.uid
+        )
+    );
+
+if (!userDoc.exists()) {
+    throw new Error(
+        "User profile not found."
+    );
+}
+
+const userData =
+    userDoc.data();
+
+const teamId =
+    userData.teamId;
+
+if (!teamId) {
+    throw new Error(
+        "Your team ID was not found."
+    );
+}
+
+const invitationRef =
+    await addDoc(
+        collection(
+            db,
+            "invitations"
+        ),
+        {
+            invitedEmail:
+                email,
+            invitedBy:
+                currentUser.uid,
+            inviterEmail:
+                currentUser.email,
+            inviterName:
+                inviterName,
+            teamId:
+                teamId,
+            status:
+                "pending",
+            createdAt:
+                serverTimestamp()
+        }
+    );
+              const inviteLink =
+    `https://tanvi-chouhan03.github.io/Velora/signup.html?invite=${invitationRef.id}`;
                 if (inviteMessage) {
                     inviteMessage.textContent =
                         "Sending invitation...";
