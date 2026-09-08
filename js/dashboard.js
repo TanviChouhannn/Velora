@@ -18,7 +18,9 @@ import {
     auth,
     db
 } from "./firebase.js";
-emailjs.init("V_wN-G0zboweJ9LN0");
+emailjs.init({
+    publicKey: "V_wN-G0zboweJ9LN0"
+});
 let currentUser = null;
 let projects = [];
 let tasks = [];
